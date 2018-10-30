@@ -1,0 +1,326 @@
+=========================================
+#! /usr/bin/perl
+%info = ('name' ,'Bob','phone','111-111-1111');
+$,='-';
+print %info;
+
+=========================================
+
+#! /usr/bin/perl
+%info = ('name' ,'Bob','phone','111-111-1111');
+$,='-';
+print %info;
+print "\n$info{'name'}\n";
+print "$info{phone}\n";
+
+=========================================
+
+#! /usr/bin/perl
+%days = ('1' ,'Sunday','2','Monday','3','Tuesday','4','Wednesday','5','Thursday','6','Friday','7','Satday');
+$,=' # ';
+print %days;
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday'
+	);
+print "$days{'2'}\n";
+print "$days{'4'}\n";
+print "$days{'6'}\n";
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+
+while(($key123,$value123) = each(%days))
+{
+	print $key123." - ".$value123." \n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+while(($key,$value) = each(%days))
+{
+	print $key." - ".$value." \n";
+}
+print "\n--------------------------\n";
+$days{'8'} = 'xyz';
+$days{'9'} = 'abc';
+print "\n";
+while(($key,$value) = each(%days))
+{
+	print $key." - ".$value." \n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+$days{'8'} = 'xxx';
+$days{'9'} = 'yyy';
+while(($key,$value) = each(%days))
+{
+	print $key." - ".$value." \n";
+}
+
+print "\n--------------------\n";
+
+delete $days{'8'};
+delete $days{'9'};
+
+print "\n";
+
+while(($key,$value) = each(%days))
+{
+	print $key." - ".$value." \n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+        '1' => 'Sunday',
+        '2' => 'Monday',
+        '3' => 'Tuesday',
+        '4' => 'Wednesday',
+        '5' => 'Thursday',
+        '6' => 'Friday',
+        '7' => 'Satday');
+if ( exists $days{'30'} )
+{
+        print "$days{'3'}\n";
+}
+else
+{
+        print "Not Found\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+@key = keys(%days);
+print "@key\n";
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+@val = values(%days);
+print "@val\n";
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+foreach $key ( keys(%days) )
+{
+	print "$key - $days{$key}\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+        '1' => 'Sunday',
+        '2' => 'Monday',
+        '3' => 'Tuesday',
+        '4' => 'Wednesday',
+        '5' => 'Thursday',
+        '6' => 'Friday',
+        '7' => 'Satday');
+%h1 = ();
+if (keys(%days))
+{
+        @key = keys(%days);
+        print "@key\n";
+}
+else
+{
+        print "Empty\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+%h1=();
+if (%h1)
+{
+	print %days;
+}
+else
+{
+	print "Empty\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+foreach $k (sort keys %days)
+{
+	print "$k => $days{$k}\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+	'1' => 'Sunday',
+	'2' => 'Monday',
+	'3' => 'Tuesday',
+	'4' => 'Wednesday',
+	'5' => 'Thursday',
+	'6' => 'Friday',
+	'7' => 'Satday');
+foreach $k (reverse sort keys %days)
+{
+	print "$k => $days{$k}\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+%days = (
+        '1' => 'Sunday',
+        '2' => 'Monday',
+        '3' => 'Tuesday',
+        '4' => 'Wednesday',
+        '5' => 'Thursday',
+        '6' => 'Friday',
+        '7' => 'Satday');
+foreach $k (sort { $b cmp $a } keys %days)
+{
+        print "$k - $days{$k}\n";
+}
+=========================================
+
+#! /usr/bin/perl
+%days = (
+        '1' => 'Sunday',
+        '2' => 'Monday',
+        '3' => 'Tuesday',
+        '4' => 'Wednesday',
+        '5' => 'Thursday',
+        '6' => 'Friday',
+        '7' => 'Satday');
+foreach $k ( sort { $days{$b} cmp $days{$a} } keys %days )
+{
+        print "$k - $days{$k}\n";
+}
+
+=========================================
+f1.txt ->
+
+shell scripting
+perl scripting
+oracle programming
+java programming
+
+
+#! /usr/bin/perl
+open(FP,"f1.txt") or die "File Open Failed\n";
+@lines = <FP>;
+chomp @lines;
+$i = 0;
+foreach (@lines)
+{
+	$info{++$i} = $_;
+}
+while(($key,$value) = each(%info))
+{
+	print "$key"." - "."$value\n";
+}
+
+=========================================
+f2.txt ->
+
+user|harshas
+password|xydbchf675
+dept|ondemand
+loc|indiahyd
+
+
+#! /usr/bin/perl
+open(FP,"f2.txt") or die "File Open Failed\n";
+@lines = <FP>;
+chomp @lines;
+%days = ();
+foreach (@lines)
+{
+	@str = split(/\|/,$_);
+#	print "@str\n";
+	$days{$str[0]} = $str[1];
+}
+while(($key,$value) = each(%days))
+{
+	print "$key"." - "."$value\n";
+}
+

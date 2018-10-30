@@ -1,0 +1,8 @@
+===========================
+#1
+print "Hello World\n";
+===========================
+#2
+#! /usr/bin/perl
+print  "hello world\n";
+

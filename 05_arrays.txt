@@ -1,0 +1,257 @@
+==========================================================
+
+#! /usr/bin/perl
+@nos =( 1,2,3,4,5,6,7,8,9,10);
+print "@nos\n";
+==========================================================
+
+#! /usr/bin/perl
+@nos = (1,2,3,4);
+print @nos;
+print "\n";
+print "@nos\n";
+print "$nos[0]\n";
+print "$nos[1]\n";
+print "$nos[2]\n";
+print "$nos[3]\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1,"mumbai",20000,"hindi");
+$count = 0;
+while ( $count < 4 )
+{
+	print "$count - $arr[$count]\n";
+	$count++;
+}
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1,"mumbai",20000,"hindi");;
+foreach $i (@arr)
+{
+	print "$i\n";
+}
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = ( 1,2,3);
+print "@arr\n";
+$arr[2] = 100;
+print "@arr\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = (100..110);
+print "@arr\n";
+@arr1 = @arr[2..6];
+print "@arr1\n";
+@arr1[0..1] = (100,200);
+print "@arr1\n";
+@str = ("one","two","three","four","five");
+print "@str\n";
+@str[1..2] = (1,2);
+print "@str\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@nos = (1..5);
+if ( defined $nos[2])
+{
+	print "Defined\n";
+}
+if ( defined $nos[10])
+{
+	print "Defined\n";
+}
+else
+{
+	print "Not Defined\n";
+}
+
+==========================================================
+
+#! /usr/bin/perl
+@nos = (1..10);
+print "@nos\n";
+$t = delete $nos[5];
+print "@nos\n";
+$len = scalar @nos;
+print "$len\n";
+
+
+==========================================================
+
+#! /usr/bin/perl
+@nos = (1..10);
+print "@nos\n";
+splice(@nos,5,3);
+print "@nos\n";
+$l = scalar @nos;
+print "$l\n";
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1,"mumbai",20000,"hindi");
+$count = 1;
+while ( $count < 5 )
+{
+	print "Element $count is $arr[$count-1]\n";
+	$count++;
+
+}
+
+print "\n--------------------\n";
+$arr[2] = 50000;
+$count = 1;
+while ( $count <= $#arr + 1 )
+{
+	print "Element $count is $arr[$count-1]\n";
+	$count++;
+}
+print "Last Index of array : $#arr\n";
+$size = $#arr + 1;
+print "Size of array  $size\n";
+
+
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = ( 1,2,3,4);
+$l1 = scalar @arr;
+print "$l1\n";
+$l2 = $#arr + 1;
+print "$l2\n";
+$l3 = @arr;
+print "$l3\n";
+
+==========================================================
+
+#! /usr/bin/perl
+$l = 10;
+$u = 20;
+@nos = ($u..$l);
+print ("@nos\n");
+
+==========================================================
+
+#! /usr/bin/perl
+print "Please enter array input\n";
+@arr = <STDIN>;
+chomp @arr;
+print "@arr\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1,2,3,4);
+print "@arr\n";
+push (@arr,5);
+print "@arr\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1,2,3,4);
+print "@arr\n";
+$i = pop (@arr);
+print "@arr\n";
+print "$i\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1,2,3,4);
+print "@arr\n";
+$i = shift(@arr);
+print "$i\n";
+print "@arr\n";
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1,2,3,4);
+print "@arr\n";
+unshift(@arr,5);
+print "@arr\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = ( "This\n","is\n","Perl","Programming\n");
+print "@arr\n";
+chomp @arr;
+print "@arr\n";
+$str = "Hai\n";
+print "$str\n";
+chomp $str;
+print "$str\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = ( "This1","is2","Perl3","Programming4");
+print "@arr\n";
+chop @arr;
+print "@arr\n";
+$str = "abcd";
+print "$str\n";
+chop $str;
+print "$str\n";
+
+==========================================================
+
+#! /usr/bin/perl
+$str = "This_is_Perl_Programming";
+print "$str\n";
+@arr = split('_',$str);
+print "@arr\n";
+
+==========================================================
+
+#! /usr/bin/perl
+$str = "1001|emp1001|bng|wintel|3000";
+print "$str\n";
+@arr = split(/\|/,$str);
+print "@arr\n";
+==========================================================
+
+#! /usr/bin/perl
+@arr = (1001,'emp1001','bng','wintel',3000);
+$str = join("|",@arr);
+print "@arr\n";
+print "$str\n";
+==========================================================
+
+#! /usr/bin/perl
+@arr = (5 ,1 ,3,2,4,10,100,20,30);
+print "@arr\n";
+@arr = sort( @arr);
+print "@arr\n";
+==========================================================
+
+#! /usr/bin/perl
+@arr = (5 ,1 ,3,2,4,10,100,20,30);
+print "@arr\n";
+@arr = sort { $b <=> $a }( @arr);
+print "@arr\n";
+
+==========================================================
+
+#! /usr/bin/perl
+@arr = (5 ,1 ,3,2,4);
+print "@arr\n";
+@arr = reverse sort (@arr);
+print "@arr\n";
+
+==========================================================
+
+#! /usr/bin/perl
+open(FP,"f1.txt") or die "File Open Failed\n";
+@lines = <FP>;
+chomp @lines;
+print "@lines\n";

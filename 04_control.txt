@@ -1,0 +1,176 @@
+==========================================================
+#1
+#! /usr/bin/perl
+
+$i = 2;
+
+if ( $i > 0 )
+{
+	print "Positive\n";
+}
+
+==========================================================
+#2
+#! /usr/bin/perl
+
+$i = 2;
+$j = 4;
+
+if ( $i == $j )
+{
+	print "Both are same\n";
+}
+else
+{
+	print "Both are not same\n";
+}
+
+==========================================================
+#3
+#! /usr/bin/perl
+
+$i = 2;
+
+if ( $i > 0) 
+{
+	print "Positive\n";
+} 
+elsif ( $i < 0 ) 
+{
+	print "Negative\n";
+} 
+else 
+{
+	print "Zero\n";
+}
+==========================================================
+#4
+#! /usr/bin/perl
+
+$i = 10;
+unless ($i == 0) 
+{
+	print "Non zero\n";
+} 
+==========================================================
+#5
+#! /usr/bin/perl
+
+$i = 10;
+unless ($i == 0) 
+{
+	print "Non zero\n";
+} 
+else 
+{
+	print "Zero\n";
+}
+=========================================
+#6
+#! /usr/bin/perl
+
+$i = 0;
+while ( $i < 10 )
+{	
+	print "$i\n";
+	$i++;
+}
+=========================================
+#7
+#! /usr/bin/perl
+
+$i = 10;
+$j = 1;
+do
+{	
+	print "$j\n";
+	$j = $j + 1;
+} while ( $j <  $i );
+=========================================
+#8
+#! /usr/bin/perl
+
+for( $c =1 ; $c < 5 ; $c++ )
+{
+	print "$c\n";
+}
+=========================================
+#9
+#! /usr/bin/perl
+
+@words = ("Here","is","a","list");
+foreach $str (@words)
+{
+	print "$str\n";
+}
+=========================================
+#10
+#! /usr/bin/perl
+
+$i = 10;
+$j = 1;
+while ( $j <= $i )
+{	
+	print "$j\n";
+	if ( $j == 5 )
+	{
+		last;
+	}
+	$j = $j + 1;
+}
+print "This line is printed\n";
+=========================================
+#11
+#! /usr/bin/perl
+
+$i = 10;
+$j = 1;
+while ( $j <= $i )
+{
+	$j++;	
+	if ( $j % 2 == 1 )
+	{
+		next;
+	}
+print "$j\n";
+}
+=========================================
+
+#12
+#! /usr/bin/perl
+use switch;
+$n = $ARGV[0];
+
+switch ( $n ) 
+{
+    case 1 { print "one\n"; }
+    case 2 { print "two\n"; }
+    else   { print "other\n"; }
+}
+
+
+use switch;
+$ch = 1;
+given ( $ch )
+{
+	when(1) 
+	{	
+		print "One\n"; 
+	}	
+
+	when (2) 
+	{	
+		print "Two\n";
+	}
+
+	when (3) 
+	{	
+		print "Three\n";
+	}
+	default 
+	{	
+		print "Other\n"; 
+	}
+}
+
+

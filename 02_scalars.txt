@@ -1,0 +1,158 @@
+==========================================================
+#1
+#! /usr/bin/perl
+
+$x = 10;
+print "$x\n";
+
+$x = "Hello World";
+print "$x\n";
+
+$x = 5.5;
+print "$x\n";
+==========================================================
+#2
+#! /usr/bin/perl
+
+$i = 10;
+$str = "\$i = $i \n";
+$str1 = '\$i = $i \n';
+
+print "$str";
+print "$str1\n";
+
+==========================================================
+#3
+#! /usr/bin/perl
+
+print "Enter Line of Input\n";
+$input = <STDIN>;
+chomp $input;
+print "Input entered is - [ $input ]\n";
+
+==========================================================
+#4
+#! /usr/bin/perl
+
+$sum = $i + "10.0"; # $i is undefined , not defined
+print "$sum\n";
+
+==========================================================
+#5
+#! /usr/bin/perl
+
+$i 	= "perl";
+$j 	= 22;
+$sum 	= $i + $j ;
+print $sum;
+==========================================================
+#6
+#! /usr/bin/perl
+
+$i = <STDIN>;
+$sum = $i + 10;
+print "$sum\n";
+==========================================================
+#7
+#! /usr/bin/perl
+
+$str = 100;
+if ( defined $str)
+{
+	print " \$str Defined\n";
+}
+if ( defined $str1)
+{
+	print "Defined\n";
+}
+else
+{
+	print " \$str1 Not Defined\n";
+}
+==========================================================
+#8
+#! /usr/bin/perl
+
+$str = "perl";
+print "$str\n";
+
+$len = length ($str);
+print "$len\n";
+==========================================================
+#9
+#! /usr/bin/perl
+
+$str = "The Perl Programming";
+print "$str\n";
+$str = substr( $str,4,4 );
+print "$str\n";
+==========================================================
+#10
+#! /usr/bin/perl
+
+$str = "perl";
+print "$str\n";
+
+$str = reverse($str);
+print "$str\n";
+==========================================================
+#11
+#!/usr/bin/perl
+
+$string = 'perl programming';
+$char = 'l';
+
+$result = index($string, $char);
+print "[ $char ] is in [ $string ]  at [ $result ]\n";
+  
+==========================================================
+#12
+#! /usr/bin/perl
+
+$str = "PERL";
+print "$str\n";
+$str = lc $str;
+print "$str\n";
+==========================================================
+#13
+#! /usr/bin/perl
+
+$str = "PERL PROG";
+print "$str\n";
+$str = lcfirst ($str);
+print "$str\n";
+==========================================================
+#14
+#! /usr/bin/perl
+
+$str = "perl";
+print "$str\n";
+$str = uc( $str);
+print "$str\n";
+==========================================================
+#15
+#! /usr/bin/perl
+
+$str = "perl script";
+print "$str\n";
+$str = ucfirst $str;
+print "$str\n";
+==========================================================
+#16
+#! /usr/bin/perl
+
+$str = time();
+print "$str\n";
+==========================================================
+#17
+#! /usr/bin/perl
+
+$str = localtime(time());
+print "$str\n";
+==========================================================
+#18
+#! /usr/bin/perl
+use POSIX;
+$str = strftime ("%Y-%m-%d" ,localtime);
+print "$str\n";
+
