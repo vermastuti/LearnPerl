@@ -1,0 +1,64 @@
+=========================================
+
+#! /usr/bin/perl
+open(FP,"/root/perl/10_fileops/file1.txt") or die "File open failed\n";
+print "File opened ...\n";
+@arr = <FP>;
+chomp @arr;
+foreach $line (@arr)
+{
+        print "$line\n";
+}
+close FP;
+
+=========================================
+
+#! /usr/bin/perl
+$fn = "/root/perl/10_fileops/file1.txt";
+open(FP,$fn) or die "File open failed\n";
+print "File opened ...\n";
+while( $line = <FP> )
+{
+        print $line;
+}
+close FP;
+
+=========================================
+
+#! /usr/bin/perl
+unless(open(FP,"/root/perl/10_fileops/file1.txt"))
+{
+        die "file1.txt open failed...\n";
+}
+@arr = <FP>;
+foreach $line (@arr)
+{
+        print $line;
+}
+
+=========================================
+
+#! /usr/bin/perl
+open(RP,"</root/perl/10_fileops/file1.txt") or die "file1.txt file open failed\n";
+open(WP,">/root/perl/10_fileops/file2.txt") or die "file2.txt file open failed\n";
+
+@arr = <RP>;
+foreach $line (@arr)
+{
+        print WP $line;
+}
+close RP;
+close(WP);
+open(RP,"/root/perl/10_fileops/file2.txt") or die "file2.txt file open failed\n";
+@arr = <RP>;
+foreach $line (@arr)
+{
+        print $line;
+}
+close (RP);
+
+=========================================
+
+#! /usr/bin/perl
+unlink("f1.txt") or die "File not found\n";
+

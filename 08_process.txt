@@ -1,0 +1,49 @@
+=========================================
+
+#! /usr/bin/perl
+$uname = `whoami`;
+chomp $uname;
+print "Username is  - [ $uname ]\n";
+
+=========================================
+
+#! /usr/bin/perl
+@unames = `who | cut -d' ' -f1`;
+chomp @unames;
+foreach $uname (@unames)
+{
+	print "$uname\n";
+}
+=========================================
+
+#! /usr/bin/perl
+$uname = qx(whoami);
+print "Username is $uname\n";
+=========================================
+
+#! /usr/bin/perl
+print "Printing the system date with system call\n";
+system ("date");
+if ($? != 0)
+{
+        print "Error\n";
+}
+else
+{
+        print "Printed the system date with system call\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+print "Printing the system date with exec call\n";
+exec ("date");
+
+if ($? != 0)
+{
+        print "Error\n";
+}
+else
+{
+        print "Printed the system date with exec call\n";
+}

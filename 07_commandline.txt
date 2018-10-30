@@ -1,0 +1,32 @@
+========================================
+
+#! /usr/bin/perl
+print "@ARGV\n";
+
+=========================================
+
+#! /usr/bin/perl
+while(@ARGV)
+{
+#	print "@ARGV\n";
+#	shift @ARGV;
+	print "$ARGV[0]\n";
+	shift;
+}
+=========================================
+
+#! /usr/bin/perl
+$cnt = $#ARGV + 1;
+print "Number of arguments passed to script : $cnt\n";
+foreach $str (0.. $#ARGV)
+{
+	print "$ARGV[$str]\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+foreach $str (@ARGV)
+{
+	print "$str\n";
+}

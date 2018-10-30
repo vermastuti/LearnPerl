@@ -1,0 +1,155 @@
+=========================================
+
+#! /usr/bin/perl
+$fname = "/home/user1/dir1";
+if ( -e $fname )
+{
+        print "exists\n";
+}
+else
+{
+        print "not exists\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+if ( -f "file1.txt" )
+{
+        print "file1.txt exists\n";
+}
+else
+{
+        print "file1.txt not exists\n";
+}
+=========================================
+
+#! /usr/bin/perl
+if ( -d "dir1")
+{
+        print "dir1 exists\n";
+}
+else
+{
+        print "dir1 not exists\n";
+}
+=========================================
+
+#! /usr/bin/perl
+if ( -f "file2.txt" && -r "file2.txt")
+{
+	print "file2.txt read permissions exists\n";
+}
+else
+{
+	print "file2.txt read permissions not present\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+if ( -f "file3.txt" && -w "file3.txt")
+{
+	print "file3.txt write permissions exists\n";
+}
+else
+{
+	print "file3.txt write permissions not present\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+if ( -f "file4.txt" && -x "file4.txt")
+{
+	print "file4.txt exe permissions exists\n";
+}
+else
+{
+	print "file4.txt exe permissions not present\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+if ( -f "file5.txt" && -s "file5.txt" )
+{
+	print "file5.txt is not empty\n";
+}
+else
+{
+	print "file5.txt is empty\n";
+}
+=========================================
+
+#! /usr/bin/perl
+if ( -z "file6.txt" )
+{
+	print "file6.txt is empty\n";
+}
+else
+{
+	print "file6.txt is not empty\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+$file = "abc.txt";
+if ( -o "$file")
+{
+        print "File $file owner is current user\n";
+}
+else
+{
+        print "File $file owner is not current user\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+$fname = "sca1.pl";
+if ( -f "$fname" )
+{
+	printf "$fname File last modified : %4.1f days ago.\n", -M $fname;
+}
+else
+{
+	print "$fname is not exists\n";
+}
+
+=========================================
+
+#! /usr/bin/perl
+@files = `ls`;
+chomp @files;
+foreach $fname (  @files )
+{
+	printf "$fname age is	: %4.4f \n", -M $fname;
+}
+
+=========================================
+
+#! /usr/bin/perl
+@files = `ls file*txt`;
+chomp @files;
+foreach $fname ( @files )
+{
+	printf "$fname size is	: %d  \n", -s $fname;
+}
+
+=========================================
+
+#! /usr/bin/perl
+@files = `ls`;
+chomp @files;
+%size = ();
+foreach $file ( @files )
+{
+        $size{$file} = (-s "$file");
+}
+foreach $file ( sort {  $size{$a} <=> $size{$b} } (keys %size ))
+{
+        print "$file - $size{$file}\n";
+}
+

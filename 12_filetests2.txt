@@ -1,0 +1,81 @@
+=========================================
+
+#! /usr/bin/perl
+foreach (@ARGV)
+{
+	print;
+	print ((-f)? " - File\n" : " - Directory\n");
+}
+=========================================
+
+#! /usr/bin/perl
+print "@ARGV\n";
+foreach (@ARGV)
+{
+	next unless -f;
+	print "$_\n" if /^f/;
+}
+
+=========================================
+
+#! /usr/bin/perl
+foreach (@ARGV)
+{
+	next unless -d;
+	print;
+	print "\n";	
+}
+
+=========================================
+
+#! /usr/bin/perl
+foreach (@ARGV)
+{
+	next unless -f;
+	print;
+	print "\n";	
+}
+
+=========================================
+
+#! /usr/bin/perl
+print "Zero byte files in current directory are -\n";
+foreach (@ARGV)
+{
+	next unless -f;
+	print "$_\n" if -s $_ == 0;
+}
+
+=========================================
+#! /usr/bin/perl
+foreach (@ARGV)
+{
+	next unless -f;
+	print "$_\n" if -s $_ > 100;
+}
+=========================================
+
+#! /usr/bin/perl
+foreach (@ARGV)
+{
+	next unless -f;
+	print "$_\n" if -s $_  < 100;
+}
+=========================================
+
+#! /usr/bin/perl
+foreach (@ARGV)
+{
+	next unless -f;
+	print "$_\n" if -s $_ == 0;
+	unlink if -s _ == 0;	
+}
+
+=========================================
+
+#! /usr/bin/perl
+foreach (@ARGV)
+{
+	next unless -f;
+	print "$_ \n" if -M $_  > 900;
+}
